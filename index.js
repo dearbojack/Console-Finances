@@ -108,31 +108,28 @@ for (var i = 0; i < finances.length; i++) {
 var monthlyChanges = [];
 var totalChanges = 0;
 
+// create an array to store monthly changes
 for (var i = 0; i < finances.length - 1; i++) {
     monthlyChanges[i] = finances[i+1][1] - finances[i][1];
-    // console.log(monthlyChanges[i]);
 }
 
-// console.log(monthlyChanges.length);
-
+// sum the monthly changes
 for (var i = 0; i < monthlyChanges.length; i++) {
     totalChanges += monthlyChanges[i];
 }
 
-// console.log(totalChanges);
 // * calculate the average and round to 2 decimal places
 averageChange = (totalChanges / monthlyChanges.length).toFixed(2);
 
-// finding the maximum profit
+// finding the maximum profit and mapping it to the month
 maxProfitIncre = Math.max.apply(null, monthlyChanges);
 mPImonth = finances[(monthlyChanges.indexOf(maxProfitIncre))+1][0];
-// console.log(max);
-// console.log(finances[(monthlyChanges.indexOf(max))+1]);
 
-// finding the maximum loss
+// finding the maximum loss and mapping it to the month
 maxProfitDecre = Math.min.apply(null, monthlyChanges);
 mPDmonth = finances[(monthlyChanges.indexOf(maxProfitDecre))+1][0];
 
+// print out the results
 console.log("Total Months: " + totalMonths);
 console.log("Total: $" + total);
 console.log("Average Change: $" + averageChange);
