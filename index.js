@@ -86,3 +86,55 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+console.log("Financial Analysis");
+console.log("----------------------------")
+
+var totalMonths = finances.length;
+var total = 0;
+var averageChange = 0;
+var maxProfitIncre = 0;
+var maxProfitDecre = 0;
+
+var mPImonth = 0;
+var mPDmonth = 0;
+
+// * the sum of all profit and decre
+for (var i = 0; i < finances.length; i++) {
+    total += finances[i][1];
+}
+
+// * calculate the monthly changes and average changes
+var monthlyChanges = [];
+var totalChanges = 0;
+
+for (var i = 0; i < finances.length - 1; i++) {
+    monthlyChanges[i] = finances[i+1][1] - finances[i][1];
+    // console.log(monthlyChanges[i]);
+}
+
+// console.log(monthlyChanges.length);
+
+for (var i = 0; i < monthlyChanges.length; i++) {
+    totalChanges += monthlyChanges[i];
+}
+
+// console.log(totalChanges);
+// * calculate the average and round to 2 decimal places
+averageChange = (totalChanges / monthlyChanges.length).toFixed(2);
+
+// finding the maximum profit
+maxProfitIncre = Math.max.apply(null, monthlyChanges);
+mPImonth = finances[(monthlyChanges.indexOf(maxProfitIncre))+1][0];
+// console.log(max);
+// console.log(finances[(monthlyChanges.indexOf(max))+1]);
+
+// finding the maximum loss
+maxProfitDecre = Math.min.apply(null, monthlyChanges);
+mPDmonth = finances[(monthlyChanges.indexOf(maxProfitDecre))+1][0];
+
+console.log("Total Months: " + totalMonths);
+console.log("Total: $" + total);
+console.log("Average Change: $" + averageChange);
+console.log("Greatest Increase in Profit: " + mPImonth + " ($" + maxProfitIncre + ")");
+console.log("Greatest Decrease in Profit: " + mPDmonth + " ($" + maxProfitDecre + ")");
