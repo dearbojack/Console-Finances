@@ -57,11 +57,11 @@ You are required to submit BOTH of the following for review:
 
 ## Deployment
 
-URL of the deployed webpage:
+URL of the deployed webpage: https://github.com/dearbojack/Console-Finances
 
-URL of the GitHub repository: https://github.com/dearbojack/Console-Finances
+URL of the GitHub repository: https://dearbojack.github.io/Console-Finances
 
-The final look of the console output: https://dearbojack.github.io/Console-Finances
+The final look of the console output: 
 
 ```text
 Financial Analysis
