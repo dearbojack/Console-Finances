@@ -59,9 +59,9 @@ You are required to submit BOTH of the following for review:
 
 URL of the deployed webpage:
 
-URL of the GitHub repository:
+URL of the GitHub repository: https://github.com/dearbojack/Console-Finances
 
-The final look of the console output:
+The final look of the console output: https://dearbojack.github.io/Console-Finances
 
 ```text
 Financial Analysis
